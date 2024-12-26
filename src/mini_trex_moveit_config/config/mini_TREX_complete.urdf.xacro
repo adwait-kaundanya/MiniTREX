@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mini_TREX_complete">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import mini_TREX_complete urdf file -->
+    <xacro:include filename="$(find test_urdf_mini_trex)/urdf/mini_TREX_complete.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="mini_TREX_complete.ros2_control.xacro" />
+
+
+    <xacro:mini_TREX_complete_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

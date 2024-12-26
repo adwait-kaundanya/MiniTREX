@@ -1,0 +1,12 @@
+# Default initial positions for mini_TREX_complete's ros2_control fake system
+
+initial_positions:
+  joint_2: 0.00
+  joint_1: 0.00
+  joint_3: 0.00
+  joint_4: 0.00
+  joint_5: 0.00
+  joint_6: 0.00
+  x_axis_joint: 0.00
+  y_axis_joint: 0.00
+  z_axis_joint: 0.00

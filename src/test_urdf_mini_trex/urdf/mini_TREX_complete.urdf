@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mini_TREX_complete">
+<link name="base_footprint">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <box size="0.001 0.001 0.001" />
+        </geometry>
+    </visual>
+</link>
+
+<joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.001" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+</joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.71563 1.093 0.7213"
+        rpy="0 0 0" />
+      <mass
+        value="19.498" />
+      <inertia
+        ixx="7.4094"
+        ixy="-1.3444E-14"
+        ixz="2.2885E-14"
+        iyy="9.2813"
+        iyz="-1.6175E-14"
+        izz="14.559" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="y_axis_link">
+    <inertial>
+      <origin
+        xyz="-0.6945 -0.24 0.115"
+        rpy="0 0 0" />
+      <mass
+        value="13.901" />
+      <inertia
+        ixx="0.063135"
+        ixy="1.1276E-17"
+        ixz="-1.8504E-17"
+        iyy="2.7061"
+        iyz="-3.8485E-19"
+        izz="2.6467" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/y_axis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89412 0.91373 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/y_axis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="y_axis_joint"
+    type="prismatic">
+    <origin
+      xyz="0.015632 0.33748 0.8999"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="y_axis_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.24"
+      upper="0"
+      effort="3"
+      velocity="3" />
+  </joint>
+  <link
+    name="x_axis_link">
+    <inertial>
+      <origin
+        xyz="-0.1905 -0.021667 0.085"
+        rpy="0 0 0" />
+      <mass
+        value="1.008" />
+      <inertia
+        ixx="0.0076264"
+        ixy="3.5899E-20"
+        ixz="1.5455E-19"
+        iyy="0.0080033"
+        iyz="1.772E-19"
+        izz="0.00069832" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/x_axis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/x_axis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="x_axis_joint"
+    type="prismatic">
+    <origin
+      xyz="0.061 -0.22 0.19"
+      rpy="3.1416 0 0" />
+    <parent
+      link="y_axis_link" />
+    <child
+      link="x_axis_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="0"
+      effort="3"
+      velocity="3" />
+  </joint>
+  <link
+    name="z_axis_link">
+    <inertial>
+      <origin
+        xyz="1.7375E-14 -0.060565 0.14244"
+        rpy="0 0 0" />
+      <mass
+        value="1.8225" />
+      <inertia
+        ixx="0.007026"
+        ixy="1.5492E-19"
+        ixz="7.9273E-19"
+        iyy="0.005886"
+        iyz="0.0020532"
+        izz="0.005886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/z_axis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/z_axis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="z_axis_joint"
+    type="prismatic">
+    <origin
+      xyz="-0.1905 -0.025 -0.061"
+      rpy="0 0 0" />
+    <parent
+      link="x_axis_link" />
+    <child
+      link="z_axis_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.1"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="fixed_base_manipulator">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 0 0.030575"
+        rpy="0 0 0" />
+      <mass
+        value="0.38902" />
+      <inertia
+        ixx="0.00031816"
+        ixy="5.5227E-21"
+        ixz="1.358E-20"
+        iyy="0.00031816"
+        iyz="-3.1279E-20"
+        izz="0.00039388" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/fixed_base_manipulator.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/fixed_base_manipulator.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0995 0.186"
+      rpy="0 0 0" />
+    <parent
+      link="z_axis_link" />
+    <child
+      link="fixed_base_manipulator" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-0.00471591007394795 0.000327841802531925 0.0449329912291735"
+        rpy="0 0 0" />
+      <mass
+        value="0.182388908186938" />
+      <inertia
+        ixx="0.000144569969287715"
+        ixy="6.05000994865696E-07"
+        ixz="2.35810769770445E-05"
+        iyy="0.000153230676050563"
+        iyz="-1.63931513972334E-06"
+        izz="6.57413577887617E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.06115"
+      rpy="0 0 0" />
+    <parent
+      link="fixed_base_manipulator" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.88"
+      upper="2.88"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.02339 0.001626 0.0552"
+        rpy="0 0 0" />
+      <mass
+        value="0.30501" />
+      <inertia
+        ixx="0.00059723"
+        ixy="1.0995E-06"
+        ixz="2.2849E-16"
+        iyy="0.00061297"
+        iyz="3.277E-15"
+        izz="0.00011121" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="-0.03721 0.0025868 0.07042"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0.99759 -0.069351 0" />
+    <limit
+      lower="-2.88"
+      upper="2.88"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.022814 -0.001586 0.048"
+        rpy="0 0 0" />
+      <mass
+        value="0.27673" />
+      <inertia
+        ixx="0.0004455"
+        ixy="1.0306E-06"
+        ixz="-1.1234E-16"
+        iyy="0.00046025"
+        iyz="-1.6243E-15"
+        izz="0.00010138" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0.0081803 -0.00056868 0.1104"
+      rpy="0 0 0" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="-0.99759 0.069351 0" />
+    <limit
+      lower="-2.88"
+      upper="2.88"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="-0.022018 0.0015306 0.011013"
+        rpy="0 0 0" />
+      <mass
+        value="0.12266" />
+      <inertia
+        ixx="5.2157E-05"
+        ixy="4.6769E-07"
+        ixz="1.1132E-05"
+        iyy="5.8852E-05"
+        iyz="-7.7386E-07"
+        izz="4.5091E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="-0.0081803 0.00056868 0.096"
+      rpy="0 0 0" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0.99759 -0.069351 0" />
+    <limit
+      lower="-2.88"
+      upper="2.88"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="-3.6148E-05 -0.0022159 0.038564"
+        rpy="0 0 0" />
+      <mass
+        value="0.10207" />
+      <inertia
+        ixx="4.8734E-05"
+        ixy="-2.3925E-07"
+        ixz="2.6298E-08"
+        iyy="3.4054E-05"
+        iyz="1.6139E-06"
+        izz="3.5955E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="-0.02903 0.0020181 0.0325"
+      rpy="0 0 0" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.88"
+      upper="2.88"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="-0.00010996 -0.0067491 1.1102E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.016965" />
+      <inertia
+        ixx="1.9545E-06"
+        ixy="2.3436E-08"
+        ixz="-9.6566E-25"
+        iyy="3.3925E-06"
+        iyz="-5.9268E-23"
+        izz="1.9541E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test_urdf_mini_trex/meshes/visual/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="-0.0005376 -0.032996 0.0457"
+      rpy="0 0 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="-0.016291 -0.99987 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

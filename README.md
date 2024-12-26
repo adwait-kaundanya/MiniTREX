@@ -63,3 +63,11 @@ source install/setup.bash
 ros2 run gantry_subscriber gantry_listener
 ```
 After executing this command the gantry will start moving to its home position
+
+Once the terminals are setup the robot can be controlled using the RVIZ2 GUI. 
+
+One of the ways is to use the interactive markers to set the pose of the end effector and once desired pose is reached in simulation, press the plan button to visually see the calculated path and then execute it by clicking on the execute button.
+
+Another more precise way to control the robot pose is to define values of individual joints. This camn be done using the joints section in panel that is on the left of the window. Use sliders or input values to set the joint values and visually see the changes in the pose of the robot, then follow the same steps to plan and execute.
+
+The easiest way is to save these orientations in the robot's srdf file which can then be chosen from the drop down menus on the start position and desired position drop downs and then follow the same steps to plan and execute.
